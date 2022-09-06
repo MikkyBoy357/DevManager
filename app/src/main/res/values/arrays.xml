@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="completed_tasks_synonyms">
+        <item>completed</item>
+        <item>completed tasks</item>
+        <item>finished</item>
+        <item>finished tasks</item>
+    </array>
+    <array name="developers_synonyms">
+        <item>Programmers</item>
+        <item>Software Developers</item>
+        <item>Software Engineers</item>
+        <item>Engineers</item>
+        <item>Ninjas</item>
+        <item>Coders</item>
+        <item>Tech Bros</item>
+        <item>Tech Guys</item>
+    </array>
+</resources>

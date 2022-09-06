@@ -1,0 +1,51 @@
+<?xml version ="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <capability android:name="actions.intent.GET_THING">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.mikkyboy.devmanager.MainActivity"
+            android:targetPackage="com.mikkyboy.devmanager">
+            <parameter
+                android:name="thing.name"
+                android:key="q" />
+        </intent>
+    </capability>
+
+    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.mikkyboy.devmanager.MainActivity"
+            android:targetPackage="com.mikkyboy.devmanager">
+            <parameter
+                android:name="feature"
+                android:key="feature" />
+        </intent>
+    </capability>
+
+    <!-- Add Get Thing BII shortcuts   -->
+
+    <shortcut
+        android:enabled="false"
+        android:shortcutId="get_devs"
+        android:shortcutShortLabel="@string/label_developers">
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding
+                android:key="feature"
+                android:value="@array/developers_synonyms" />
+        </capability-binding>
+    </shortcut>
+
+    <!-- Add Open App Feature BII capability   -->
+    <shortcut
+        android:enabled="false"
+        android:shortcutId="completed_tasks"
+        android:shortcutShortLabel="@string/label_completed">
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding
+                android:key="feature"
+                android:value="@array/completed_tasks_synonyms" />
+        </capability-binding>
+    </shortcut>
+
+</shortcuts>
