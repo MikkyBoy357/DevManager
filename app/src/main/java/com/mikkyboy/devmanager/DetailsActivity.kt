@@ -1,5 +1,6 @@
 package com.mikkyboy.devmanager
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,7 @@ class DetailsActivity : AppCompatActivity() {
 
         mDevelopersList = Constants.getDevelopers()
 
+        val btnDetailEdit: Button = findViewById<View>(R.id.btn_detail_edit) as Button
         val icBack: ImageView = findViewById<View>(R.id.ic_details_back) as ImageView
         val tvDetailCodeName = findViewById<View>(R.id.tv_detail_code_name) as TextView
         val tvDetailStack = findViewById<View>(R.id.tv_detail_stack) as TextView
@@ -33,6 +35,14 @@ class DetailsActivity : AppCompatActivity() {
         icBack.setOnClickListener {
             println("Back")
             finish()
+        }
+
+        btnDetailEdit.setOnClickListener {
+            println("EDIT")
+            val intent: Intent = Intent(this, EditActivity::class.java)
+            intent.putExtra("isEdit", true)
+            intent.putExtra("devId", devId)
+            startActivity(intent)
         }
     }
 }
