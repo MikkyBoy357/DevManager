@@ -48,4 +48,26 @@
         </capability-binding>
     </shortcut>
 
+    <!-- Widget Intents -->
+    <capability android:name="actions.intent.GET_ORDER">
+        <app-widget
+            android:identifier="GET_ORDER"
+            android:targetClass="com.mikkyboy.devmanager.FirstWidget"
+            android:targetPackage="com.mikkyboy.devmanager">
+            <parameter
+                android:name="order.orderedItem.name"
+                android:key="name" />
+            <extra
+                android:name="hasTts"
+                android:value="true" />
+        </app-widget>
+
+        <!-- Fallback intent with no parameters needed to successfully execute. -->
+        <intent
+            android:action="GET_ORDER_FALLBACK"
+            android:targetClass="com.mikkyboy.devmanager.FirstWidget"
+            android:targetPackage="com.mikkyboy.devmanager" />
+    </capability>
+
+
 </shortcuts>
